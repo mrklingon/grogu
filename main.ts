@@ -65,9 +65,13 @@ function talk () {
         . . . . .
         `)
 }
-input.onSound(DetectedSound.Loud, function () {
-    soundExpression.giggle.playUntilDone()
-    talk()
-})
 music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
 look_around()
+basic.forever(function () {
+    if (130 < input.soundLevel()) {
+        talk()
+        soundExpression.giggle.playUntilDone()
+    } else {
+        look_around()
+    }
+})
