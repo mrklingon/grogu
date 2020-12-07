@@ -70,7 +70,7 @@ look_around()
 basic.forever(function () {
     if (130 < input.soundLevel()) {
         talk()
-        soundExpression.giggle.playUntilDone()
+        soundExpression.giggle.play()
     } else {
         look_around()
     }
